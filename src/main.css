@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: BopomofoRuby;
+  src: url("/BopomofoRuby1909-v1-Regular.ttf");
+}
+
+.v {
+  font-family: BopomofoRuby, cwTeXKai, "KaiTi TW", "標楷體";
+}
+
+.v ruby {
+  writing-mode: vertical-lr;
+}
+
+ruby {
+  padding-right: 2px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0.1em;
+  margin-right: 0.2em;
+}
+
+rt {
+  font-size: 26%;
+  font-family: BopomofoRuby;
+  text-align: center;
+  text-orientation: upright;
+}
