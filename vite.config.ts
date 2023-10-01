@@ -1,35 +1,28 @@
 import react from "@vitejs/plugin-react";
-import { cwd } from "node:process";
-import { CommonServerOptions, defineConfig, loadEnv } from "vite";
+import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
+import { viteSingleFile } from "vite-plugin-singlefile";
 
-const { PORT, VITE_WEB_BASE, VITE_TITLE } = loadEnv("development", cwd(), "");
-
-const SERVER_OPTIONS: CommonServerOptions = {
-  port: parseInt(PORT, 10),
-  strictPort: true,
-};
-
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: VITE_WEB_BASE,
-  server: SERVER_OPTIONS,
-  preview: SERVER_OPTIONS,
-  build: {
-    chunkSizeWarningLimit: Infinity,
-    reportCompressedSize: false,
-  },
+  base: "./",
   plugins: [
     react(),
+    viteSingleFile(),
     VitePWA({
+      registerType: "autoUpdate",
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,ttf}"],
+      },
       manifest: {
-        name: VITE_TITLE,
-        short_name: VITE_TITLE,
+        name: "今天吃什麼好呢",
+        short_name: "今天吃什麼好呢",
+        theme_color: "#fff",
         icons: [
           {
             src: "./icon.png",
             sizes: "512x512",
             type: "image/png",
+            purpose: "any maskable",
           },
         ],
       },

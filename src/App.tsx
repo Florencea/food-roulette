@@ -1,35 +1,38 @@
 import { useState } from "react";
-import { Word, WordT } from "./components/Word";
-import fruit_data from "./data/fruit.json";
-import meat_data from "./data/meat.json";
-import other_data from "./data/other.json";
-import sauce_data from "./data/sauce.json";
-import vegetable_data from "./data/vegetable.json";
+import data from "./data";
+import "./style.css";
 
-const wordData = [
-  ...vegetable_data,
-  ...meat_data,
-  ...fruit_data,
-  ...sauce_data,
-  ...other_data,
-];
-
-const roulette = () => {
-  const total = wordData.length;
-  const index = Math.floor(Math.random() * total);
-  return wordData[index];
-};
+const rand = () => Math.floor(Math.random() * data.length);
 
 export default function App() {
-  const [word, setWord] = useState<WordT>(roulette());
+  const [idx, setIdx] = useState(0);
+
+  const word = data[idx];
+
   return (
-    <div
-      className="select-none cursor-pointer"
+    <main
       onClick={() => {
-        setWord(roulette());
+        setIdx(rand());
       }}
     >
-      <Word word={word} />
-    </div>
+      <section
+        style={{
+          borderColor: {
+            肉: "#ff7a45",
+            菜: "#73d13d",
+            水果: "#bae637",
+            調味料: "#ffec3d",
+            其他: "#bfbfbf",
+          }[word.genre],
+        }}
+      >
+        {word.data.map(([ji, zhuin], i) => (
+          <ruby key={i}>
+            {ji}
+            <rt>{zhuin}</rt>
+          </ruby>
+        ))}
+      </section>
+    </main>
   );
 }
