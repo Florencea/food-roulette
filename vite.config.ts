@@ -7,7 +7,7 @@ export default defineConfig({
   base: "./",
   plugins: [
     react(),
-    viteSingleFile(),
+    viteSingleFile({ useRecommendedBuildConfig: false }),
     VitePWA({
       registerType: "autoUpdate",
       workbox: {
