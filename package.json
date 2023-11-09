@@ -2,61 +2,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "wireit",
-    "format": "wireit",
-    "build": "wireit",
-    "deploy": "wireit"
-  },
-  "wireit": {
-    "build": {
-      "command": "vite build",
-      "files": [
-        "src",
-        "public",
-        "index.html",
-        "tsconfig.json",
-        "tsconfig.node.json",
-        "vite.config.ts"
-      ],
-      "clean": "if-file-deleted",
-      "output": [
-        "dist/**"
-      ],
-      "dependencies": [
-        "format",
-        "lint"
-      ]
-    },
-    "deploy": {
-      "command": "gh-pages -d dist",
-      "files": [
-        "dist/**"
-      ],
-      "output": [],
-      "dependencies": [
-        "build"
-      ]
-    },
-    "lint": {
-      "command": "eslint --ext js,js.cjs,jsx,ts,tsx --color --cache --cache-location .eslintcache . && tsc",
-      "files": [
-        "*/**.{js,js.cjs,jsx,ts,tsx}",
-        ".eslintrc.json",
-        "!public",
-        "!dist"
-      ],
-      "output": []
-    },
-    "format": {
-      "command": "prettier '**/*' --write --ignore-unknown --cache",
-      "files": [
-        "*/**.{js,js.cjs,jsx,ts,tsx,json,md,yml,yaml,html}",
-        "!public",
-        "!dist"
-      ],
-      "output": []
-    }
+    "deploy": "npm run build && gh-pages -d dist",
+    "lint": "eslint --ext ts,tsx . && tsc",
+    "format": "prettier '**/*' --write --ignore-unknown --cache"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
@@ -77,7 +27,6 @@
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vite-plugin-pwa": "^0.16.7",
-    "vite-plugin-singlefile": "^0.13.5",
-    "wireit": "^0.14.1"
+    "vite-plugin-singlefile": "^0.13.5"
   }
 }
