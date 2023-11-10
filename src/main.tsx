@@ -1,9 +1,4 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { render } from "preact";
 import App from "./App";
 
-createRoot(document.getElementById("root") as HTMLDivElement).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+render(<App />, document.getElementById("root")!);
