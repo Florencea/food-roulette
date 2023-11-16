@@ -24,6 +24,8 @@ jobs:
         with:
           node-version: 18
           cache: npm
+      - name: Update npm
+        run: npm install --audit false --fund false --loglevel error --progress false --global true npm
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Restore cache
