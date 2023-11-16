@@ -1,20 +1,29 @@
 {
   "name": "food-roulette",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "gh-pages -d out"
+  },
+  "dependencies": {
+    "next": "^14.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.6.0",
+    "@types/node": "^20.9.1",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "eslint": "^8.53.0",
+    "eslint-config-next": "^14.0.3",
+    "eslint-config-prettier": "^9.0.0",
     "gh-pages": "^6.0.0",
-    "preact": "^10.19.2",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0",
-    "vite-plugin-singlefile": "^0.13.5"
+    "prettier": "^3.1.0",
+    "typescript": "^5.2.2"
   }
 }

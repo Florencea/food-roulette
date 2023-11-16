@@ -1,5 +1,7 @@
-import { useState } from "preact/hooks";
-import data from "./data";
+"use client";
+
+import { useState } from "react";
+import { data } from "./data";
 
 export default function App() {
   const [idx, setIdx] = useState(0);

@@ -1,4 +1,4 @@
-export default [
+export const data = [
   {
     c: "#bae637",
     d: [
