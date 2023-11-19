@@ -1,7 +1,6 @@
 {
   "name": "food-roulette",
   "version": "1.0.0",
-  "type": "commonjs",
   "private": true,
   "scripts": {
     "dev": "next dev",
