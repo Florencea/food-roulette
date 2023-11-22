@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           cache: npm
       - name: Update npm
         run: npm install --audit false --fund false --loglevel error --progress false --global true npm
