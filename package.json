@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier '**/*' --write --ignore-unknown --cache"
+    "format": "prettier \"**/*\" --write --ignore-unknown --cache"
   },
   "dependencies": {
     "@types/node": "^20.10.1",
