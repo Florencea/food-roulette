@@ -10,7 +10,7 @@
     "format": "prettier \"**/*\" --write --ignore-unknown --cache"
   },
   "dependencies": {
-    "@types/node": "^20.11.2",
+    "@types/node": "^20.11.4",
     "@types/react": "^18.2.48",
     "next": "^14.0.4",
     "react": "^18.2.0",
