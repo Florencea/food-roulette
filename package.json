@@ -10,9 +10,9 @@
     "format": "prettier \"**/*\" --write --ignore-unknown --cache"
   },
   "dependencies": {
-    "@types/node": "^20.11.5",
+    "@types/node": "^20.11.8",
     "@types/react": "^18.2.48",
-    "next": "^14.0.4",
+    "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.3.3"
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@types/react-dom": "^18.2.18",
     "eslint": "^8.56.0",
-    "eslint-config-next": "^14.0.4",
+    "eslint-config-next": "^14.1.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.2.4"
   }
