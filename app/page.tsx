@@ -9,7 +9,7 @@ export default function App() {
     const f = async () => {
       const res = await fetch("http://localhost:5173");
       const data = await res.text();
-      console.log(data);
+      window.alert(data);
     };
     f();
   }, []);
