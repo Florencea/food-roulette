@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import styles from "./layout.module.css";
 
@@ -8,18 +9,19 @@ const BopomofoRuby = localFont({
   display: "swap",
 });
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+export const metadata: Metadata = {
+  title: "今天吃什麼好呢",
+  description: "今天吃什麼好呢",
+};
+
+const layout = ({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
   return (
-    <html lang="zh-TW" className={clsx(BopomofoRuby.variable, styles.html)}>
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>今天吃什麼好呢</title>
-        <meta name="description" content="今天吃什麼好呢" />
-      </head>
-      <body className={styles.body}>
-        <div>{children}</div>
-      </body>
+    <html lang="zh-TW" className={clsx(BopomofoRuby.variable, styles.layout)}>
+      <body>{children}</body>
     </html>
   );
 };

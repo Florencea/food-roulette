@@ -3,11 +3,13 @@
 import styles from "@/components/Main.module.css";
 import { useCallback, useState } from "react";
 
+interface DataT {
+  c: string;
+  d: Array<Array<string>>;
+}
+
 interface Props {
-  data: Array<{
-    c: string;
-    d: Array<Array<string>>;
-  }>;
+  data: Array<DataT>;
 }
 
 export const Main = ({ data }: Props) => {
@@ -24,11 +26,11 @@ export const Main = ({ data }: Props) => {
 
   return (
     <main className={styles.main} onClick={randomize}>
-      <section className={styles.section} style={{ borderColor }}>
+      <section style={{ borderColor }}>
         {contents.map(([text, zhuin], key) => (
-          <ruby className={styles.ruby} key={key}>
+          <ruby key={key}>
             {text}
-            <rt className={styles.rt}>{zhuin}</rt>
+            <rt>{zhuin}</rt>
           </ruby>
         ))}
       </section>

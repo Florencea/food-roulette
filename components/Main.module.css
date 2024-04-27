@@ -6,7 +6,7 @@
   place-content: center;
 }
 
-.section {
+.main section {
   display: grid;
   gap: 1rem;
   padding: 2.5rem;
@@ -15,13 +15,13 @@
   font-size: 8rem;
 }
 
-.ruby {
+.main ruby {
   margin-left: -1.5rem;
   writing-mode: vertical-lr;
   font-family: serif;
 }
 
-.rt {
+.main rt {
   font-size: 30%;
   ruby-position: inter-character;
   letter-spacing: 4px;
