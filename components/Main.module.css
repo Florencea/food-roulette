@@ -1,22 +1,4 @@
-@media (prefers-color-scheme: light) {
-  html {
-    color: black;
-    background-color: white;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color: white;
-    background-color: black;
-  }
-}
-
-body {
-  margin: 0;
-}
-
-main {
+.main {
   user-select: none;
   cursor: pointer;
   height: 100vh;
@@ -24,7 +6,7 @@ main {
   place-content: center;
 }
 
-main > section {
+.section {
   display: grid;
   gap: 1rem;
   padding: 2.5rem;
@@ -33,13 +15,13 @@ main > section {
   font-size: 8rem;
 }
 
-main > section > ruby {
+.ruby {
   margin-left: -1.5rem;
   writing-mode: vertical-lr;
   font-family: serif;
 }
 
-main > section > ruby > rt {
+.rt {
   font-size: 30%;
   ruby-position: inter-character;
   letter-spacing: 4px;

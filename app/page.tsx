@@ -1,28 +1,8 @@
-"use client";
+import { Main } from "@/components/Main";
+import { data } from "@/libs/data";
 
-import { useState } from "react";
-import { data } from "./data";
+const page = () => {
+  return <Main data={data} />;
+};
 
-export default function App() {
-  const [idx, setIdx] = useState(0);
-  return (
-    <main
-      onClick={() => {
-        setIdx(Math.floor(Math.random() * data.length));
-      }}
-    >
-      <section
-        style={{
-          borderColor: data[idx].c,
-        }}
-      >
-        {data[idx].d.map(([ji, zhuin], i) => (
-          <ruby key={i}>
-            {ji}
-            <rt>{zhuin}</rt>
-          </ruby>
-        ))}
-      </section>
-    </main>
-  );
-}
+export default page;
